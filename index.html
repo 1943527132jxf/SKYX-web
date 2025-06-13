@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中医文化传承</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>中医文化传承</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">服务项目</a></li>
+                <li><a href="#gallery">图片展示</a></li>
+                <li><a href="#news">新闻中心</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>传承千年中医智慧</h2>
+                <p>弘扬中华传统文化，守护人民健康</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>关于我们</h2>
+            <div class="about-content">
+                <p>我们致力于传承和发扬中医文化，为现代人提供专业的中医养生保健服务。</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>服务项目</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>中医诊疗</h3>
+                    <p>专业的中医诊断和治疗服务</p>
+                </div>
+                <div class="service-card">
+                    <h3>养生保健</h3>
+                    <p>个性化的养生方案制定</p>
+                </div>
+                <div class="service-card">
+                    <h3>健康咨询</h3>
+                    <p>专业的中医健康咨询服务</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>图片展示</h2>
+            <div class="gallery-grid">
+                <img src="微信图片_20250611152635.jpg" alt="中医文化展示1">
+                <img src="微信图片_20250611152648.jpg" alt="中医文化展示2">
+                <img src="微信图片_20250611152653.jpg" alt="中医文化展示3">
+                <img src="微信图片_20250611152659.jpg" alt="中医文化展示4">
+                <img src="微信图片_20250611152704.jpg" alt="中医文化展示5">
+                <img src="微信图片_20250611152709.jpg" alt="中医文化展示6">
+            </div>
+        </section>
+
+        <section id="news" class="news">
+            <h2>新闻中心</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <h3>中医药文化进校园活动圆满举行</h3>
+                    <p>2024年6月，学校举办中医药文化进校园活动，弘扬传统医学知识。</p>
+                </article>
+                <article class="news-item">
+                    <h3>本馆专家受邀参加健康讲座</h3>
+                    <p>2024年5月，本馆中医专家受邀为社区居民开展健康养生讲座。</p>
+                </article>
+                <article class="news-item">
+                    <h3>中医药创新成果展览开幕</h3>
+                    <p>2024年4月，中医药创新成果展在市文化馆隆重开幕，吸引众多市民参观。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>联系我们</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <input type="text" name="user_name" placeholder="您的姓名" required>
+                    <input type="number" name="user_age" placeholder="年龄" min="0" max="120" required>
+                    <input type="tel" name="user_phone" placeholder="联系电话" required>
+                    <textarea name="message" placeholder="请输入您的留言" required></textarea>
+                    <button type="submit">发送消息</button>
+                </form>
+                <div id="form-status" class="form-status"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 中医文化传承. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
