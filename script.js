@@ -86,4 +86,96 @@ document.addEventListener('DOMContentLoaded', function() {
 // 添加页面加载动画
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
+});
+
+// 移动端菜单切换
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
+// 点击导航链接时关闭菜单
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
+});
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// 表单提交处理
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value
+        };
+
+        try {
+            const response = await fetch('YOUR_SUPABASE_ENDPOINT', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': 'YOUR_SUPABASE_ANON_KEY'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert('消息已发送，我们会尽快与您联系！');
+                contactForm.reset();
+            } else {
+                throw new Error('提交失败');
+            }
+        } catch (error) {
+            alert('发送消息时出错，请稍后重试。');
+            console.error('Error:', error);
+        }
+    });
+}
+
+// 滚动时导航栏效果
+let lastScroll = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+    }
+    
+    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        // 向下滚动
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+        // 向上滚动
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
 }); 

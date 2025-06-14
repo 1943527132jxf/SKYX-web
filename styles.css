@@ -6,18 +6,20 @@
 }
 
 body {
-    font-family: "Microsoft YaHei", sans-serif;
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
     line-height: 1.6;
     color: #333;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* 导航栏样式 */
-.navbar {
+header {
     background-color: #fff;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -25,207 +27,575 @@ body {
     z-index: 1000;
 }
 
-.logo h1 {
-    color: #2c3e50;
-    font-size: 1.8rem;
+nav {
+    padding: 15px 0;
 }
 
-.nav-links {
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.nav-menu {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links li {
-    margin-left: 2rem;
+.nav-menu li {
+    margin-left: 30px;
 }
 
-.nav-links a {
+.nav-menu a {
     text-decoration: none;
     color: #2c3e50;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #e74c3c;
+.nav-menu a:hover {
+    color: #27ae60;
 }
 
-/* 主要内容区域 */
-main {
-    margin-top: 80px;
-}
-
-section {
-    padding: 4rem 5%;
-}
-
-/* 首页英雄区域 */
+/* 首页英雄区域样式 */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('微信图片_20250611152635.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('（提取图片）爱我中国《中医》/第1页-1.PNG');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
     color: white;
+    padding-top: 80px;
 }
 
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* 关于我们部分 */
-.about {
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #219a52;
+}
+
+/* 服务项目样式 */
+.services {
+    padding: 80px 0;
     background-color: #f9f9f9;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
+.services h2 {
     text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
 }
 
-/* 服务项目部分 */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .service-card {
     background: white;
-    padding: 2rem;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
-/* 图片展示部分 */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+.service-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* 联系我们部分 */
-.contact {
-    background-color: #f9f9f9;
-}
-
-.contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#contact-form input,
-#contact-form textarea {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-#contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-#contact-form button {
-    background-color: #e74c3c;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-#contact-form button:hover {
-    background-color: #c0392b;
-}
-
-/* 页脚样式 */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
+.service-card p {
+    color: #666;
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
+    .nav-menu {
+        display: none;
     }
+    
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h2 {
+        font-size: 2em;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+    }
+}
 
-    .nav-links {
-        margin-top: 1rem;
+@media (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* 关于我们样式 */
+.about {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* 新闻动态样式 */
+.news {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-date {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.news-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
+/* 联系我们样式 */
+.contact {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #27ae60;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.2);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #219a52;
+}
+
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.contact-info strong {
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px;
+        margin: 0 20px;
+    }
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.footer-copyright {
+    text-align: right;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
         flex-direction: column;
         text-align: center;
     }
-
-    .nav-links li {
-        margin: 0.5rem 0;
+    
+    .footer-info {
+        margin-bottom: 20px;
     }
-
-    .hero-content h2 {
-        font-size: 2rem;
+    
+    .footer-copyright {
+        text-align: center;
     }
 }
 
-/* 表单状态样式 */
-.form-status {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* 团队部分样式 */
+.team {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.team h2 {
     text-align: center;
-    display: none;
+    margin-bottom: 50px;
+    color: #333;
 }
 
-.form-status.sending {
-    display: block;
-    background-color: #f1c40f;
-    color: #fff;
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.form-status.success {
-    display: block;
-    background-color: #2ecc71;
-    color: #fff;
+.team-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.form-status.error {
-    display: block;
-    background-color: #e74c3c;
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.team-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-info h3 {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.team-position {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.team-description {
+    color: #777;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-image {
+        height: 250px;
+    }
+}
+
+/* 图片展示部分样式 */
+.gallery {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+
+.gallery-overlay p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 年龄输入框美化 */
+.age-input {
+    width: 120px;
+    padding: 8px 12px;
+    border: 1.5px solid #27ae60;
+    border-radius: 6px;
+    font-size: 1em;
+    margin-left: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+.age-input:focus {
+    border-color: #219a52;
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.2);
+}
+
+#age-form label {
+    font-size: 1em;
     color: #fff;
+    margin-right: 4px;
+}
+
+#age-form {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
 } 
